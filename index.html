@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DMC — Machines à chantilly, churros, granité & SAV toutes marques · Gémenos</title>
+<meta name="description" content="DMC, spécialiste de la machine à chantilly Mussana, appareils à jus de fruits, granité, churros, crêpières Krampouz et chocolatières. Revendeur et réparateur. SAV et pièces détachées toutes marques. Gémenos, près de Marseille.">
+<meta name="robots" content="index,follow">
+
+<meta property="og:title" content="DMC — Spécialistes de la machine à chantilly · Gémenos">
+<meta property="og:description" content="Vente, SAV et pièces détachées toutes marques : chantilly, churros, granité, jus de fruits, crêpières Krampouz, chocolatières.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --cream:#FAF5EE;
+    --cream-2:#F2E8DA;
+    --choco:#2B1B14;
+    --choco-soft:#4A3327;
+    --framboise:#C21F49;
+    --framboise-deep:#9C1439;
+    --caramel:#C9903F;
+    --muted:#7B6A5D;
+    --line:rgba(43,27,20,.12);
+    --line-strong:rgba(43,27,20,.22);
+    --display:"Fraunces",Georgia,serif;
+    --body:"Hanken Grotesk",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body);
+    color:var(--choco);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+  /* ---------- monospace technical label ---------- */
+  .mono{
+    font-family:var(--mono);
+    font-size:.7rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--framboise);
+  }
+  .mono.dim{color:var(--muted)}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,245,238,.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s,box-shadow .3s;
+  }
+  header.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px -18px rgba(43,27,20,.6)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:baseline;gap:12px}
+  .brand .logo{
+    font-family:var(--display);font-weight:600;font-size:1.6rem;letter-spacing:.02em;
+    color:var(--choco);line-height:1;
+  }
+  .brand .logo b{color:var(--framboise)}
+  .brand .kicker{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .nav-links{display:flex;align-items:center;gap:34px}
+  .nav-links a{font-weight:500;font-size:.94rem;position:relative;padding:4px 0}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--framboise);transition:width .25s}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{
+    font-family:var(--mono);font-size:.78rem;font-weight:700;letter-spacing:.02em;
+    background:var(--choco);color:var(--cream);
+    padding:11px 18px;border-radius:2px;transition:background .2s;
+  }
+  .nav-cta:hover{background:var(--framboise)}
+  .burger{display:none;background:none;border:0;cursor:pointer;width:34px;height:34px;color:var(--choco)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:64px 0 80px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:26px}
+  .hero .eyebrow span.dot{width:7px;height:7px;border-radius:50%;background:var(--framboise)}
+  .hero h1{
+    font-family:var(--display);font-weight:500;font-size:clamp(2.6rem,5.2vw,4.4rem);
+    line-height:1.02;letter-spacing:-.01em;margin-bottom:24px;
+  }
+  .hero h1 em{font-style:italic;color:var(--framboise)}
+  .hero p.lead{font-size:1.14rem;color:var(--choco-soft);max-width:44ch;margin-bottom:34px}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-weight:600;font-size:.98rem;padding:15px 26px;border-radius:2px;
+    transition:transform .2s,background .2s,box-shadow .2s;cursor:pointer;border:0;
+  }
+  .btn-primary{background:var(--framboise);color:#fff}
+  .btn-primary:hover{background:var(--framboise-deep);transform:translateY(-2px);box-shadow:0 12px 28px -14px var(--framboise)}
+  .btn-ghost{background:transparent;color:var(--choco);border:1.5px solid var(--line-strong)}
+  .btn-ghost:hover{border-color:var(--choco);transform:translateY(-2px)}
+
+  /* hero spotlight card (placeholder produit phare) */
+  .spotlight{
+    position:relative;background:var(--choco);border-radius:4px;overflow:hidden;
+    aspect-ratio:4/4.4;box-shadow:0 40px 80px -40px rgba(43,27,20,.65);
+  }
+  .spotlight .tag{position:absolute;top:20px;left:20px;z-index:3;color:var(--cream)}
+  .spotlight .tag .mono{color:var(--caramel)}
+  .spotlight .ref{position:absolute;bottom:20px;left:20px;right:20px;z-index:3;display:flex;justify-content:space-between;align-items:flex-end;color:var(--cream)}
+  .spotlight .ref h3{font-family:var(--display);font-weight:500;font-size:1.5rem;line-height:1.05}
+  .spotlight .ref .mono{color:rgba(250,245,238,.55)}
+  .spotlight .art{position:absolute;inset:0;display:grid;place-items:center}
+  .swirl{width:58%;height:auto;opacity:.95;filter:drop-shadow(0 20px 40px rgba(0,0,0,.4))}
+  .spotlight::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 30%,rgba(194,31,73,.28),transparent 60%);z-index:1}
+  .ph-note{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;color:rgba(250,245,238,.35);text-transform:uppercase;text-align:center;pointer-events:none}
+
+  /* ---------- brand strip ---------- */
+  .brands{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;background:var(--cream)}
+  .brands .row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
+  .brands .lab{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-right:8px}
+  .brands .b{font-family:var(--display);font-weight:600;font-size:1.15rem;color:var(--choco-soft);opacity:.75;transition:opacity .2s,color .2s}
+  .brands .b:hover{opacity:1;color:var(--framboise)}
+  .brands .sep{width:4px;height:4px;border-radius:50%;background:var(--line-strong)}
+
+  /* ---------- section shell ---------- */
+  section{padding:88px 0}
+  .sec-head{max-width:640px;margin-bottom:48px}
+  .sec-head h2{font-family:var(--display);font-weight:500;font-size:clamp(2rem,3.6vw,2.9rem);line-height:1.05;letter-spacing:-.01em;margin:14px 0 16px}
+  .sec-head p{color:var(--choco-soft);font-size:1.06rem}
+
+  /* ---------- catalogue grid ---------- */
+  .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{
+    position:relative;background:#fff;border:1px solid var(--line);border-radius:4px;
+    overflow:hidden;display:flex;flex-direction:column;min-height:280px;
+    transition:transform .25s,box-shadow .25s,border-color .25s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 24px 44px -28px rgba(43,27,20,.5);border-color:var(--line-strong)}
+  .card .thumb{
+    aspect-ratio:16/10;display:grid;place-items:center;position:relative;overflow:hidden;
+    background:var(--cream-2);border-bottom:1px solid var(--line);
+  }
+  .card .thumb svg{width:34%;height:auto}
+  .card .thumb .phlabel{position:absolute;bottom:8px;right:10px;font-family:var(--mono);font-size:.55rem;letter-spacing:.08em;color:var(--muted);opacity:.6;text-transform:uppercase}
+  .card .body{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column}
+  .card h3{font-family:var(--display);font-weight:600;font-size:1.32rem;line-height:1.1;margin-bottom:8px}
+  .card p{font-size:.9rem;color:var(--muted);margin-bottom:16px;flex:1}
+  .card .more{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--framboise);display:inline-flex;align-items:center;gap:6px}
+  .card.feature{grid-column:span 2}
+  .card.feature .thumb{aspect-ratio:auto}
+  .card.feature{flex-direction:row;min-height:0}
+  .card.feature .thumb{width:46%;border-bottom:0;border-right:1px solid var(--line);aspect-ratio:auto}
+  .card.feature .thumb svg{width:42%}
+  .card.feature .body{width:54%;justify-content:center;padding:34px}
+  .card.feature h3{font-size:1.7rem}
+  .card.feature .flag{align-self:flex-start;margin-bottom:12px}
+  .flag{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--framboise);color:#fff;padding:4px 9px;border-radius:2px}
+
+  /* ---------- SAV band ---------- */
+  .sav{background:var(--choco);color:var(--cream);position:relative;overflow:hidden}
+  .sav::before{content:"";position:absolute;right:-10%;top:-30%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(194,31,73,.35),transparent 65%)}
+  .sav .wrap{position:relative;z-index:2}
+  .sav-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .sav h2{font-family:var(--display);font-weight:500;font-size:clamp(2rem,3.6vw,3rem);line-height:1.04;margin:16px 0 20px}
+  .sav h2 em{font-style:italic;color:var(--caramel)}
+  .sav p{color:rgba(250,245,238,.78);font-size:1.08rem;margin-bottom:28px;max-width:46ch}
+  .sav .mono{color:var(--caramel)}
+  .sav-points{display:grid;gap:2px;border:1px solid rgba(250,245,238,.14);border-radius:4px;overflow:hidden}
+  .sav-points .pt{padding:22px 24px;background:rgba(250,245,238,.03);display:flex;gap:16px;align-items:flex-start}
+  .sav-points .pt .n{font-family:var(--mono);font-size:.78rem;color:var(--caramel);padding-top:3px}
+  .sav-points .pt h4{font-family:var(--display);font-weight:600;font-size:1.16rem;margin-bottom:4px}
+  .sav-points .pt p{color:rgba(250,245,238,.6);font-size:.92rem;margin:0}
+
+  /* ---------- trust / pourquoi ---------- */
+  .trust{background:var(--cream-2)}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .trust .item{padding:28px 4px 4px;border-top:2px solid var(--framboise)}
+  .trust .item .k{font-family:var(--display);font-weight:600;font-size:2.4rem;line-height:1;color:var(--choco)}
+  .trust .item .l{font-weight:600;margin:10px 0 6px;font-size:1.02rem}
+  .trust .item p{font-size:.9rem;color:var(--muted)}
+
+  /* ---------- contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  .coord .line{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .coord .line:first-of-type{border-top:1px solid var(--line)}
+  .coord .line .ic{color:var(--framboise);flex-shrink:0;padding-top:2px}
+  .coord .line .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+  .coord .line .v{font-size:1.04rem;font-weight:500}
+  .coord .line .v a:hover{color:var(--framboise)}
+  .map{margin-top:26px;border-radius:4px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9}
+  .map iframe{width:100%;height:100%;border:0;filter:grayscale(.2) contrast(1.02)}
+
+  form{background:#fff;border:1px solid var(--line);border-radius:4px;padding:32px}
+  form h3{font-family:var(--display);font-weight:600;font-size:1.5rem;margin-bottom:6px}
+  form .sub{color:var(--muted);font-size:.92rem;margin-bottom:24px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+  .field input,.field select,.field textarea{
+    width:100%;font-family:var(--body);font-size:.98rem;color:var(--choco);
+    background:var(--cream);border:1px solid var(--line);border-radius:2px;padding:12px 14px;transition:border-color .2s,background .2s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--framboise);background:#fff}
+  .field textarea{resize:vertical;min-height:110px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  form button{width:100%;margin-top:8px;justify-content:center}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--choco);color:rgba(250,245,238,.72);padding:56px 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(250,245,238,.12)}
+  footer .logo{font-family:var(--display);font-weight:600;font-size:1.5rem;color:var(--cream)}
+  footer .logo b{color:var(--framboise)}
+  footer p{font-size:.9rem;margin-top:12px;max-width:38ch}
+  footer h5{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--caramel);margin-bottom:16px}
+  footer ul{list-style:none}
+  footer ul li{margin-bottom:10px;font-size:.92rem}
+  footer ul li a:hover{color:var(--cream)}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:.8rem;color:rgba(250,245,238,.5)}
+  .foot-bottom .mono{color:rgba(250,245,238,.5)}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:44px}
+    .spotlight{max-width:420px;margin:0 auto}
+    .cat-grid{grid-template-columns:repeat(2,1fr)}
+    .card.feature{grid-column:span 2;flex-direction:column}
+    .card.feature .thumb{width:100%;border-right:0;border-bottom:1px solid var(--line);aspect-ratio:16/9}
+    .card.feature .body{width:100%}
+    .sav-grid,.contact-grid{grid-template-columns:1fr;gap:38px}
+    .trust-grid{grid-template-columns:repeat(2,1fr);gap:28px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .nav-links{
+      position:fixed;inset:74px 0 auto 0;background:var(--cream);flex-direction:column;
+      gap:0;padding:8px 24px 20px;border-bottom:1px solid var(--line);
+      transform:translateY(-120%);transition:transform .3s;box-shadow:0 20px 40px -24px rgba(43,27,20,.5);
+    }
+    .nav-links.open{transform:none}
+    .nav-links a{width:100%;padding:14px 0;border-bottom:1px solid var(--line)}
+    .nav-links a::after{display:none}
+    .nav-cta{margin-top:10px}
+    .burger{display:grid;place-items:center}
+  }
+  @media(max-width:560px){
+    .cat-grid{grid-template-columns:1fr}
+    .card.feature{grid-column:span 1}
+    .trust-grid,.row2{grid-template-columns:1fr}
+    .brands .row{gap:10px}
+    .brand .kicker{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#" class="brand">
+      <span class="logo">D<b>M</b>C</span>
+      <span class="kicker">Gémenos · depuis 1998</span>
+    </a>
+    <nav class="nav-links" id="menu">
+      <a href="catalogue.html">Catalogue</a>
+      <a href="entretien-sav.html">SAV & Pièces</a>
+      <a href="#pourquoi">La maison</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav-cta">Demander un devis</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="eyebrow"><span class="dot"></span><span class="mono">Vente · SAV · Pièces détachées toutes marques</span></span>
+      <h1>Les spécialistes de la <em>machine à chantilly</em>.</h1>
+      <p class="lead">Depuis Gémenos, près de Marseille : matériel professionnel pour la gastronomie, l'événementiel et les forains. Vendu, installé, réparé — et entretenu, quelle que soit la marque.</p>
+      <div class="hero-actions">
+        <a href="#catalogue" class="btn btn-primary">Voir le catalogue
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Nous contacter</a>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="spotlight">
+        <div class="tag"><div class="mono">Produit phare</div></div>
+        <div class="art">
+          <svg class="swirl" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 20c-18 0-30 12-30 26 0 6 3 11 8 14-12 2-22 12-22 24 0 8 5 15 12 18-14 3-24 15-24 28 0 10 7 18 17 21-8 4-13 12-13 20h104c0-8-5-16-13-20 10-3 17-11 17-21 0-13-10-25-24-28 7-3 12-10 12-18 0-12-10-22-22-24 5-3 8-8 8-14 0-14-12-26-30-26Z" fill="#FAF5EE"/>
+            <path d="M100 20c-18 0-30 12-30 26 0 6 3 11 8 14-12 2-22 12-22 24 0 8 5 15 12 18-14 3-24 15-24 28 0 10 7 18 17 21-8 4-13 12-13 20" stroke="#C21F49" stroke-width="2.5" opacity=".5"/>
+            <rect x="52" y="171" width="96" height="30" rx="4" fill="#C9903F"/>
+            <rect x="60" y="201" width="80" height="12" rx="3" fill="#4A3327"/>
+          </svg>
+        </div>
+        <div class="ph-note">Emplacement photo<br>machine Mussana</div>
+        <div class="ref">
+          <div><h3>Machines Mussana</h3></div>
+          <div class="mono">Réf. Mussana</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BRANDS ================= -->
+<div class="brands">
+  <div class="wrap row">
+    <span class="lab">Marques distribuées & entretenues</span>
+    <span class="b">Mussana</span><span class="sep"></span>
+    <span class="b">Krampouz</span><span class="sep"></span>
+    <span class="b">Crematic</span><span class="sep"></span>
+    <span class="b">Hamilton Beach</span><span class="sep"></span>
+    <span class="b">GBG</span><span class="sep"></span>
+    <span class="b">SPM</span><span class="sep"></span>
+    <span class="b">VEMA</span><span class="sep"></span>
+    <span class="b">Vitamfruits</span>
+  </div>
+</div>
+
+<!-- ================= CATALOGUE ================= -->
+<section id="catalogue">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="mono">01 — Notre gamme</span>
+      <h2>Le matériel qui fait tourner un labo, un stand ou une boutique.</h2>
+      <p>Sept familles d'appareils professionnels. Cliquez sur une catégorie pour la présenter en détail — les fiches produits et photos s'ajoutent au fil des références.</p>
+    </div>
+
+    <div class="cat-grid">
+      <!-- FEATURE : chantilly -->
+      <a href="catalogue.html#chantilly" class="card feature reveal">
+        <div class="thumb">
+          <svg viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60 14c-11 0-18 7-18 15 0 4 2 7 5 9-7 1-13 7-13 14 0 5 3 9 7 11-9 2-15 9-15 17 0 6 4 11 10 13-5 2-8 7-8 12h62c0-5-3-10-8-12 6-2 10-7 10-13 0-8-6-15-15-17 4-2 7-6 7-11 0-7-6-13-13-14 3-2 5-5 5-9 0-8-7-15-18-15Z" fill="#fff" stroke="#C21F49" stroke-width="2.2"/>
+            <rect x="34" y="104" width="52" height="16" rx="3" fill="#C9903F"/>
+          </svg>
+          <span class="phlabel">img · chantilly</span>
+        </div>
+        <div class="body">
+          <span class="flag">Notre spécialité</span>
+          <h3>Machines à chantilly Mussana</h3>
+          <p>La référence de la crème fouettée minute. Vente, mise en service et SAV agréé. Modèles pour bar, pâtisserie, restaurant et volume intensif.</p>
+          <span class="more">Découvrir
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- jus de fruits -->
+      <a href="catalogue.html#jus" class="card reveal">
+        <div class="thumb">
+          <svg viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40 26h40l-5 46a6 6 0 0 1-6 5H51a6 6 0 0 1-6-5l-5-46Z" fill="#fff" stroke="#C21F49" stroke-width="2.2"/>
+            <path d="M45 44h30" stroke="#C9903F" stroke-width="3"/>
+            <path d="M63 8 58 26" stroke="#4A3327" stroke-width="2.2"/><circle cx="63" cy="8" r="4" fill="#C21F49"/>
+          </svg>
+          <span class="phlabel">img</span>
+        </div>
+        <div class="body">
+          <h3>Appareils à jus de fruits</h3>
+          <p>Blenders, presse-agrumes, centrifugeuses, shakers, brise-glace et groupes multi-services.</p>
+          <span class="more">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <!-- granité -->
+      <a href="catalogue.html#granite" class="card reveal">
+        <div class="thumb">
+          <svg viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="42" y="20" width="36" height="52" rx="6" fill="#fff" stroke="#C21F49" stroke-width="2.2"/>
+            <path d="M48 20c0-8 24-8 24 0" stroke="#C9903F" stroke-width="2.4"/>
+            <path d="M50 40h20M50 50h20" stroke="#C21F49" stroke-width="2" opacity=".6"/>
+          </svg>
+          <span class="phlabel">img</span>
+        </div>
+        <div class="body">
+          <h3>Machines à granité</h3>
+          <p>Distributeurs 1 à 3 bacs pour granités, boissons glacées et cocktails, en continu.</p>
+          <span class="more">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <!-- churros -->
+      <a href="catalogue.html#churros" class="card reveal">
+        <div class="thumb">
+          <svg viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40 60c0-14 8-24 20-24s20 8 20 20" stroke="#C21F49" stroke-width="4" stroke-linecap="round"/>
+            <path d="M40 60c0-14 8-24 20-24s20 8 20 20" stroke="#C9903F" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 6"/>
+            <path d="M36 66h48" stroke="#4A3327" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span class="phlabel">img</span>
+        </div>
+        <div class="body">
+          <h3>Matériel à churros</h3>
+          <p>Machines, doseuses, friteuses et accessoires pour churros — fixe ou mobile.</p>
+          <span class="more">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <!-- crêpières / gaufriers -->
+      <a href="catalogue.html#crepieres" class="card reveal">
+        <div class="thumb">
+          <svg viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="48" cy="45" r="20" fill="#fff" stroke="#C21F49" stroke-width="2.2"/>
+            <path d="M40 45h16M48 37v16" stroke="#C9903F" stroke-width="2"/>
+            <rect x="74" y="30" width="26" height="30" rx="3" fill="#fff" stroke="#C21F49" stroke-width="2.2"/>
+            <path d="M80 38h14M80 45h14M80 52h14M84 34v22M91 34v22" stroke="#C9903F" stroke-width="1.6"/>
+          </svg>
+          <span class="phlabel">img</span>
+        </div>
+        <div class="body">
+          <h3>Crêpières & gaufriers</h3>
+          <p>Revendeur et réparateur <strong>Krampouz</strong>, fabricant français. Billigs, gaufriers, plaques.</p>
+          <span class="more">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <!-- forains -->
+      <a href="catalogue.html#forains" class="card reveal">
+        <div class="thumb">
+          <svg viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="34" r="18" fill="#fff" stroke="#C21F49" stroke-width="2.2"/>
+            <path d="M50 30c4-4 16-4 20 0M52 40c3 3 13 3 16 0" stroke="#C9903F" stroke-width="2"/>
+            <path d="M60 52v18M54 76h12" stroke="#4A3327" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+          <span class="phlabel">img</span>
+        </div>
+        <div class="body">
+          <h3>Matériel pour forains</h3>
+          <p>Crêpes, barbe à papa, gaufres, nappage, chariots — le stand complet, prêt à tourner.</p>
+          <span class="more">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <!-- chocolatières -->
+      <a href="catalogue.html#chocolatieres" class="card reveal">
+        <div class="thumb">
+          <svg viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M44 30h32l-3 40a5 5 0 0 1-5 5H52a5 5 0 0 1-5-5l-3-40Z" fill="#fff" stroke="#C21F49" stroke-width="2.2"/>
+            <path d="M76 44h6a4 4 0 0 1 0 12h-5" stroke="#C21F49" stroke-width="2.2"/>
+            <path d="M54 20c0 4-4 4-4 8M64 18c0 4-4 4-4 8" stroke="#C9903F" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="phlabel">img</span>
+        </div>
+        <div class="body">
+          <h3>Chocolatières bain-marie</h3>
+          <p>Chocolat chaud à la tasse, tenue au chaud et service continu pour bars et salons.</p>
+          <span class="more">Découvrir <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <!-- SAV mini-card -->
+      <a href="entretien-sav.html" class="card reveal" style="background:var(--choco);border-color:var(--choco)">
+        <div class="thumb" style="background:#38241b;border-bottom-color:rgba(250,245,238,.12)">
+          <svg viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M70 30a14 14 0 0 0-19 17L34 64l8 8 17-17a14 14 0 0 0 17-19l-9 9-7-2-2-7 9-9Z" fill="none" stroke="#C9903F" stroke-width="2.4"/>
+          </svg>
+          <span class="phlabel" style="color:rgba(250,245,238,.4)">atelier</span>
+        </div>
+        <div class="body">
+          <h3 style="color:var(--cream)">SAV & pièces détachées</h3>
+          <p style="color:rgba(250,245,238,.6)">Réparation toutes marques. Nombreuses pièces en stock, expédition rapide.</p>
+          <span class="more" style="color:var(--caramel)">Notre atelier <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SAV ================= -->
+<section id="sav" class="sav">
+  <div class="wrap sav-grid">
+    <div class="reveal">
+      <span class="mono">02 — L'atelier</span>
+      <h2>On ne vend pas seulement. On <em>répare</em>.</h2>
+      <p>C'est ce qui nous distingue d'un simple revendeur : un atelier qui remet en état les machines de tous les fabricants, avec un stock de pièces conséquent pour éviter l'immobilisation.</p>
+      <a href="#contact" class="btn btn-primary">Demander une réparation
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="sav-points reveal">
+      <div class="pt"><span class="n">—</span><div><h4>Toutes marques</h4><p>Mussana, Krampouz, Crematic, GBG, SPM et les autres : diagnostic et réparation sans exclusive.</p></div></div>
+      <div class="pt"><span class="n">—</span><div><h4>Pièces détachées en stock</h4><p>Un stock permanent pour limiter le temps d'arrêt de votre matériel. Expédition possible.</p></div></div>
+      <div class="pt"><span class="n">—</span><div><h4>Conseil & mise en service</h4><p>Le bon appareil pour votre volume, votre local et votre budget — puis l'installation.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= POURQUOI ================= -->
+<section id="pourquoi" class="trust">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="mono">03 — La maison</span>
+      <h2>Une entreprise familiale, spécialiste depuis plus de vingt ans.</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="item reveal"><div class="k">20+</div><div class="l">Années de métier</div><p>Une expertise construite sur le terrain, au service des professionnels.</p></div>
+      <div class="item reveal"><div class="k">8</div><div class="l">Familles d'appareils</div><p>De la chantilly aux stands forains, un catalogue complet et cohérent.</p></div>
+      <div class="item reveal"><div class="k">∞</div><div class="l">Marques réparées</div><p>Le SAV n'est pas limité à ce que nous vendons.</p></div>
+      <div class="item reveal"><div class="k">13420</div><div class="l">Gémenos</div><p>À deux pas de Marseille et de l'Aubagne, accueil sur place.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="mono">04 — Contact & devis</span>
+      <h2>Parlons de votre besoin.</h2>
+      <p>Un achat, un conseil, une panne ? Écrivez-nous ou passez à l'atelier de Gémenos.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="coord reveal">
+        <div class="line">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <div><div class="k">Adresse</div><div class="v">978 Avenue du 2ème Cuirassiers<br>13420 Gémenos</div></div>
+        </div>
+        <div class="line">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5c0 9 6 15 15 15l2-3-4-2-2 2c-3-1-6-4-7-7l2-2-2-4-4 1Z"/></svg></span>
+          <div><div class="k">Téléphone</div><div class="v"><a href="tel:+33491791219">04 91 79 12 19</a></div></div>
+        </div>
+        <div class="line">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4 8l8 5 8-5"/></svg></span>
+          <div><div class="k">Fax</div><div class="v">04 42 62 94 16</div></div>
+        </div>
+        <div class="line">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <div><div class="k">E-mail</div><div class="v"><a href="mailto:info@machineachantilly.com">info@machineachantilly.com</a></div></div>
+        </div>
+        <div class="line">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><div class="k">Horaires</div><div class="v">Lundi au vendredi<br><span style="font-size:.9rem;color:var(--muted)">9h – 12h · 14h – 18h</span></div></div>
+        </div>
+        <div class="map">
+          <iframe src="https://maps.google.com/maps?q=978+Avenue+du+2%C3%A8me+Cuirassiers+13420+G%C3%A9menos&z=15&output=embed" loading="lazy" title="Plan Gémenos"></iframe>
+        </div>
+      </div>
+
+      <!-- Formspree : remplacer VOTRE_ID par l'identifiant du formulaire -->
+      <form action="https://formspree.io/f/VOTRE_ID" method="POST" class="reveal">
+        <h3>Demande de devis / SAV</h3>
+        <p class="sub">Réponse sous 24–48 h ouvrées.</p>
+        <div class="row2">
+          <div class="field"><label for="nom">Nom</label><input id="nom" name="nom" type="text" required></div>
+          <div class="field"><label for="ese">Établissement</label><input id="ese" name="etablissement" type="text"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="mail">E-mail</label><input id="mail" name="email" type="email" required></div>
+          <div class="field"><label for="tel">Téléphone</label><input id="tel" name="telephone" type="tel"></div>
+        </div>
+        <div class="field">
+          <label for="objet">Votre demande concerne</label>
+          <select id="objet" name="objet">
+            <option>Machine à chantilly</option>
+            <option>Appareil à jus de fruits</option>
+            <option>Machine à granité</option>
+            <option>Matériel à churros</option>
+            <option>Crêpière / Gaufrier</option>
+            <option>Matériel forain</option>
+            <option>Chocolatière</option>
+            <option>SAV / Réparation</option>
+            <option>Pièces détachées</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" placeholder="Marque, modèle, panne éventuelle, volume recherché…" required></textarea></div>
+        <button type="submit" class="btn btn-primary">Envoyer la demande
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 12 16-8-6 16-3-6-7-2Z"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="logo">D<b>M</b>C</span>
+        <p>Spécialiste de la machine à chantilly, du matériel gastronomique et forain. Vente, SAV et pièces détachées toutes marques, à Gémenos.</p>
+      </div>
+      <div>
+        <h5>Catalogue</h5>
+        <ul>
+          <li><a href="#catalogue">Machines à chantilly</a></li>
+          <li><a href="#catalogue">Jus de fruits & granité</a></li>
+          <li><a href="#catalogue">Churros & forains</a></li>
+          <li><a href="#catalogue">Crêpières & chocolatières</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+33491791219">04 91 79 12 19</a></li>
+          <li><a href="mailto:info@machineachantilly.com">info@machineachantilly.com</a></li>
+          <li>13420 Gémenos</li>
+          <li>Lun – Ven · 9h-12h / 14h-18h</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> DMC — Tous droits réservés.</span>
+      <span class="mono">Gémenos · 13420 · France</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // année
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // header shadow
+  const header = document.getElementById('header');
+  addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 8));
+
+  // menu mobile
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  burger.addEventListener('click', () => menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  // reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

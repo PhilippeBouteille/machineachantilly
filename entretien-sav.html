@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entretien & SAV — DMC · Pièces détachées toutes marques, Gémenos</title>
+<meta name="description" content="SAV et pièces détachées toutes marques pour machines à chantilly. Guides d'entretien : nettoyage, régulateur d'air, montage des clapets de pompe. Devis gratuit, DMC Gémenos.">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF5EE;--cream-2:#F2E8DA;--choco:#2B1B14;--choco-soft:#4A3327;
+    --framboise:#C21F49;--framboise-deep:#9C1439;--caramel:#C9903F;--muted:#7B6A5D;
+    --line:rgba(43,27,20,.12);--line-strong:rgba(43,27,20,.22);
+    --display:"Fraunces",Georgia,serif;--body:"Hanken Grotesk",system-ui,sans-serif;--mono:"Space Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--choco);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--framboise)}
+
+  header{position:sticky;top:0;z-index:60;background:rgba(250,245,238,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:baseline;gap:12px}
+  .brand .logo{font-family:var(--display);font-weight:600;font-size:1.6rem;color:var(--choco);line-height:1}
+  .brand .logo b{color:var(--framboise)}
+  .brand .kicker{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .nav-links{display:flex;align-items:center;gap:32px}
+  .nav-links a{font-weight:500;font-size:.94rem;position:relative;padding:4px 0}
+  .nav-links a.active{color:var(--framboise)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--framboise);transition:width .25s}
+  .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+  .nav-cta{font-family:var(--mono);font-size:.78rem;font-weight:700;background:var(--choco);color:var(--cream);padding:11px 18px;border-radius:2px;transition:background .2s}
+  .nav-cta:hover{background:var(--framboise)}
+  .burger{display:none;background:none;border:0;cursor:pointer;width:34px;height:34px;color:var(--choco)}
+
+  .page-hero{padding:56px 0 40px}
+  .page-hero h1{font-family:var(--display);font-weight:500;font-size:clamp(2.3rem,5vw,3.6rem);line-height:1.02;letter-spacing:-.01em;margin:16px 0}
+  .page-hero p{color:var(--choco-soft);font-size:1.1rem;max-width:60ch}
+
+  /* SAV band */
+  .sav-band{background:var(--choco);color:var(--cream);padding:56px 0;position:relative;overflow:hidden}
+  .sav-band::before{content:"";position:absolute;right:-8%;top:-30%;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(194,31,73,.32),transparent 65%)}
+  .sav-band .wrap{position:relative;z-index:2}
+  .sav-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+  .sav-band h2{font-family:var(--display);font-weight:500;font-size:clamp(1.8rem,3.2vw,2.5rem);margin-bottom:14px}
+  .sav-band h2 em{font-style:italic;color:var(--caramel)}
+  .sav-band p{color:rgba(250,245,238,.78);margin-bottom:22px}
+  .stat-row{display:flex;gap:28px;flex-wrap:wrap}
+  .stat .k{font-family:var(--display);font-weight:600;font-size:2.2rem;color:var(--cream)}
+  .stat .l{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--caramel);margin-top:4px}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.98rem;padding:14px 24px;border-radius:2px;transition:transform .2s,background .2s;cursor:pointer;border:0}
+  .btn-primary{background:var(--framboise);color:#fff}
+  .btn-primary:hover{background:var(--framboise-deep);transform:translateY(-2px)}
+  .sav-list{display:grid;gap:2px;border:1px solid rgba(250,245,238,.14);border-radius:4px;overflow:hidden}
+  .sav-list .pt{padding:18px 20px;background:rgba(250,245,238,.03);display:flex;gap:14px;align-items:flex-start}
+  .sav-list .pt svg{flex-shrink:0;margin-top:2px;color:var(--caramel)}
+  .sav-list .pt div h4{font-size:1rem;font-weight:600;margin-bottom:2px}
+  .sav-list .pt div p{font-size:.86rem;color:rgba(250,245,238,.6);margin:0}
+
+  /* guides */
+  .guides{padding:76px 0}
+  .sec-head{max-width:640px;margin-bottom:36px}
+  .sec-head h2{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,3.4vw,2.6rem);line-height:1.05;margin:14px 0 14px}
+  .sec-head p{color:var(--choco-soft)}
+
+  .acc{border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#fff;margin-bottom:14px}
+  .acc summary{list-style:none;cursor:pointer;padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc summary .st{display:flex;align-items:center;gap:16px}
+  .acc summary .num{font-family:var(--mono);font-size:.72rem;color:var(--framboise);flex-shrink:0}
+  .acc summary h3{font-family:var(--display);font-weight:600;font-size:1.28rem}
+  .acc summary .sub{font-size:.86rem;color:var(--muted);margin-top:2px}
+  .acc summary .chev{transition:transform .25s;flex-shrink:0;color:var(--muted)}
+  .acc[open] summary .chev{transform:rotate(180deg)}
+  .acc[open] summary{border-bottom:1px solid var(--line)}
+  .acc-body{padding:22px 24px 26px;color:var(--choco-soft);font-size:.95rem}
+  .acc-body h5{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:16px 0 8px}
+  .acc-body h5:first-child{margin-top:0}
+  .acc-body ol,.acc-body ul{padding-left:20px;margin-bottom:6px}
+  .acc-body li{margin-bottom:5px}
+  .acc-body .note{background:var(--cream-2);border-left:3px solid var(--caramel);padding:12px 14px;font-size:.88rem;margin-top:14px;border-radius:2px}
+  .acc-foot{margin-top:18px;display:flex;flex-wrap:wrap;gap:12px}
+  .pdf-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--framboise);border:1.5px solid var(--framboise);padding:9px 15px;border-radius:2px;transition:all .2s}
+  .pdf-link:hover{background:var(--framboise);color:#fff}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .two-col .half h5{margin-top:0}
+
+  .cta-band{background:var(--cream-2);padding:64px 0;text-align:center}
+  .cta-band h2{font-family:var(--display);font-weight:500;font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:12px}
+  .cta-band p{color:var(--choco-soft);max-width:48ch;margin:0 auto 26px}
+
+  footer{background:var(--choco);color:rgba(250,245,238,.72);padding:52px 0 26px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:34px;border-bottom:1px solid rgba(250,245,238,.12)}
+  footer .logo{font-family:var(--display);font-weight:600;font-size:1.5rem;color:var(--cream)}
+  footer .logo b{color:var(--framboise)}
+  footer p{font-size:.9rem;margin-top:12px;max-width:38ch}
+  footer h5{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--caramel);margin-bottom:16px}
+  footer ul{list-style:none}
+  footer ul li{margin-bottom:10px;font-size:.92rem}
+  footer ul li a:hover{color:var(--cream)}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:22px;font-size:.8rem;color:rgba(250,245,238,.5)}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  @media(max-width:820px){
+    .sav-grid{grid-template-columns:1fr;gap:32px}
+    .two-col{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .nav-links{position:fixed;inset:74px 0 auto 0;background:var(--cream);flex-direction:column;gap:0;padding:8px 24px 20px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .3s}
+    .nav-links.open{transform:none}
+    .nav-links a{width:100%;padding:14px 0;border-bottom:1px solid var(--line)}
+    .nav-links a::after{display:none}
+    .nav-cta{margin-top:10px}
+    .burger{display:grid;place-items:center}
+  }
+  @media(max-width:480px){.brand .kicker{display:none}.stat-row{gap:20px}}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><span class="logo">D<b>M</b>C</span><span class="kicker">Gémenos</span></a>
+    <nav class="nav-links" id="menu">
+      <a href="index.html">Accueil</a>
+      <a href="catalogue.html">Catalogue</a>
+      <a href="entretien-sav.html" class="active">Entretien & SAV</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html#contact" class="nav-cta">Demander un devis</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<section class="page-hero wrap reveal">
+  <span class="mono">Entretien & SAV</span>
+  <h1>Réparer plutôt que remplacer.</h1>
+  <p>Toutes marques, pas seulement celles que nous vendons. Un stock de pièces conséquent et des guides d'entretien pour prolonger la vie de votre machine.</p>
+</section>
+
+<!-- ============ SAV BAND ============ -->
+<section class="sav-band">
+  <div class="wrap sav-grid">
+    <div class="reveal">
+      <span class="mono" style="color:var(--caramel)">Notre atelier</span>
+      <h2>Le <em>SAV toutes marques</em> qui nous distingue.</h2>
+      <p>Diagnostic, réparation et remise en état pour Mussana, Krampouz, Crematic, GBG, SPM et les autres fabricants. Devis gratuit avant toute intervention, dépannage en France comme à l'étranger.</p>
+      <div class="stat-row">
+        <div class="stat"><div class="k">1000+</div><div class="l">Références en stock</div></div>
+        <div class="stat"><div class="k">Toutes</div><div class="l">Marques acceptées</div></div>
+        <div class="stat"><div class="k">Gratuit</div><div class="l">Devis systématique</div></div>
+      </div>
+    </div>
+    <div class="sav-list reveal">
+      <div class="pt"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg><div><h4>Pièces détachées en stock</h4><p>Joints, clapets, régulateurs, résistances, thermostats — expédiés rapidement.</p></div></div>
+      <div class="pt"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 11 18-5-8 18-2-8-8-5Z"/></svg><div><h4>Dépannage France & étranger</h4><p>Intervention ou envoi de pièces, selon la panne et l'urgence.</p></div></div>
+      <div class="pt"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg><div><h4>Devis gratuit</h4><p>Diagnostic transparent avant tout engagement.</p></div></div>
+      <a href="index.html#contact" class="btn btn-primary" style="margin-top:4px;justify-content:center">Demander un devis SAV</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUIDES ============ -->
+<section class="guides">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="mono">Guides d'entretien</span>
+      <h2>Les gestes qui prolongent la vie de votre machine.</h2>
+      <p>Quatre procédures essentielles pour l'entretien courant d'une machine à chantilly Mussana. Chaque guide est aussi disponible en version imprimable.</p>
+    </div>
+
+    <!-- Nettoyage machine -->
+    <details class="acc reveal" open>
+      <summary>
+        <div class="st"><span class="num">01</span><div><h3>Nettoyage de la machine à chantilly</h3><div class="sub">Ancien système et nouveau système de nettoyage</div></div></div>
+        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="acc-body">
+        <p>Le nettoyage se fait en deux temps, le soir et le lendemain matin, avec un trempage nocturne des pièces démontables. La méthode diffère selon que votre machine dispose ou non du nouveau système de nettoyage intégré.</p>
+        <div class="two-col">
+          <div class="half">
+            <h5>Ancien système — le soir</h5>
+            <ol>
+              <li>Retirer la cuve de crème et la placer filmée au réfrigérateur.</li>
+              <li>Préparer 1,5 L d'eau tiède (50° max) avec 1 à 2 bouchons de nettoyant spécial.</li>
+              <li>Nettoyer le tuyau plongeur à l'eau chaude, le remettre en place et soutirer 1 L du mélange.</li>
+              <li>Démonter la douille et le régulateur d'air, les nettoyer à l'eau chaude.</li>
+              <li>Faire tremper ces deux pièces dans le reste du mélange toute la nuit ; nettoyer l'intérieur de la machine et la cuve amovible.</li>
+            </ol>
+            <h5>Le lendemain</h5>
+            <ol>
+              <li>Remonter le régulateur d'air puis la douille.</li>
+              <li>Pomper le reste du mélange, rincer à l'eau claire et fraîche.</li>
+              <li>Replacer la cuve de crème.</li>
+            </ol>
+          </div>
+          <div class="half">
+            <h5>Nouveau système</h5>
+            <p>Les machines équipées du système de nettoyage intégré simplifient cette routine : le circuit se nettoie directement, sans démontage complet de la douille et du régulateur à chaque cycle. Le principe général — trempage, rinçage, entretien du régulateur d'air — reste le même.</p>
+            <div class="note">De temps en temps, débranchez complètement la machine pour nettoyer l'intérieur, l'emplacement du bac et autour de la pompe.</div>
+          </div>
+        </div>
+        <div class="acc-foot">
+          <a class="pdf-link" href="https://www.machineachantilly.com/telechargement/procedure-de-nettoyage.pdf" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>PDF — Nettoyage (ancien système)</a>
+        </div>
+      </div>
+    </details>
+
+    <!-- Régulateur d'air -->
+    <details class="acc reveal">
+      <summary>
+        <div class="st"><span class="num">02</span><div><h3>Nettoyage du régulateur d'air</h3><div class="sub">Trois pièces à démonter, nettoyer, remonter</div></div></div>
+        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="acc-body">
+        <ol>
+          <li>Démonter les 3 pièces de l'ensemble régulateur d'air.</li>
+          <li>Nettoyer chaque pièce à l'eau chaude additionnée de détergent.</li>
+          <li>Déboucher les orifices avec un petit goupillon ou un fil de fer inox — jamais de cure-dent, qui peut casser et obstruer un trou.</li>
+          <li>Vérifier les logements : l'inox doit être visible au fond de chaque trou, et l'axe central doit circuler librement dans l'embase.</li>
+          <li>Remonter les trois éléments en serrant modérément, puis replacer le régulateur sur la machine.</li>
+        </ol>
+        <div class="note">Ne jamais tourner le réglage de plus d'un tour : au-delà, le régulateur est probablement bouché ou la crème est défectueuse.</div>
+        <div class="acc-foot">
+          <a class="pdf-link" href="https://www.machineachantilly.com/telechargement/regulateur-air.pdf" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>PDF — Régulateur d'air</a>
+        </div>
+      </div>
+    </details>
+
+    <!-- Clapets de pompe -->
+    <details class="acc reveal">
+      <summary>
+        <div class="st"><span class="num">03</span><div><h3>Montage des clapets de pompe</h3><div class="sub">Ancien et nouveau modèle</div></div></div>
+        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="acc-body">
+        <p>La pompe est le cœur de la machine : c'est elle qui transforme la crème liquide en chantilly. Changer les clapets redonne de la pression et améliore le foisonnement.</p>
+        <h5>Avant de les changer, vérifier</h5>
+        <ul>
+          <li>L'état : des clapets neufs sont parfaitement orthogonaux ; des clapets usés présentent des marches d'escalier dans les angles ou des rayures profondes.</li>
+          <li>Le sens du montage.</li>
+          <li>Qu'ils circulent librement dans leur logement, sans être collés l'un à l'autre — un collage vient souvent d'une utilisation sans eau ni crème.</li>
+        </ul>
+        <p>La procédure de montage est similaire sur ancien et nouveau modèle ; seule la pièce diffère. Un doute sur votre modèle ? Contactez l'atelier avant intervention.</p>
+        <div class="acc-foot">
+          <a class="pdf-link" href="https://www.machineachantilly.com/telechargement/clapets-de-pompe-nouveau-model.pdf" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>PDF — Nouveau modèle</a>
+          <a class="pdf-link" href="https://www.machineachantilly.com/telechargement/clapets-de-pompe.pdf" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>PDF — Ancien modèle</a>
+        </div>
+      </div>
+    </details>
+
+    <!-- Pas trouvé ? -->
+    <details class="acc reveal">
+      <summary>
+        <div class="st"><span class="num">04</span><div><h3>Votre panne n'est pas listée ?</h3><div class="sub">Diagnostic à distance ou sur place</div></div></div>
+        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="acc-body">
+        <p>Ces guides couvrent l'entretien courant. Pour toute panne plus sérieuse, ou sur un appareil d'une autre marque, décrivez-nous le problème : nous établissons un devis gratuit avant toute intervention.</p>
+        <div class="acc-foot">
+          <a href="index.html#contact" class="pdf-link" style="border-color:var(--choco);color:var(--choco)">Décrire ma panne</a>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap reveal">
+    <h2>Une pièce à commander, une panne à diagnostiquer ?</h2>
+    <p>Précisez la marque et le modèle : nous vous répondons avec un devis gratuit sous 24–48 h.</p>
+    <a href="index.html#contact" class="btn btn-primary" style="background:var(--framboise);color:#fff">Contacter l'atelier
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><span class="logo">D<b>M</b>C</span><p>Spécialiste de la machine à chantilly, du matériel gastronomique et forain. Vente, SAV et pièces détachées toutes marques, à Gémenos.</p></div>
+      <div><h5>Navigation</h5><ul><li><a href="index.html">Accueil</a></li><li><a href="catalogue.html">Catalogue</a></li><li><a href="entretien-sav.html">Entretien & SAV</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="tel:+33491791219">04 91 79 12 19</a></li><li><a href="mailto:info@machineachantilly.com">info@machineachantilly.com</a></li><li>978 Avenue du 2ème Cuirassiers, 13420 Gémenos</li><li>Lun – Ven · 9h-12h / 14h-18h</li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© <span id="year"></span> DMC — Tous droits réservés.</span><span class="mono" style="color:rgba(250,245,238,.5)">S.A.V. toutes marques · Devis gratuit</span></div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
